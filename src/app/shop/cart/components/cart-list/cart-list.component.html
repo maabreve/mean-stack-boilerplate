@@ -1,0 +1,80 @@
+<div class="main">
+    <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+        <div class="item item-1" fxFlex="50%">
+            <h1>
+                Minha Compra
+            </h1>
+
+        </div>
+        <div class="item item-2" fxFlex="50%" fxFlexOrder="3" style="text-align: right">
+            <h4 *ngIf="_total > 0">
+                Total Compra: {{ _total}}
+            </h4>
+        </div>
+    </div>
+</div>
+<div *ngIf="!_cartList || _cartList.length === 0">
+    Nenhum item no carrinho.
+</div>
+
+<div *ngIf="_cartList && _cartList.length > 0">
+    <table class="table">
+        <tr>
+            <th>
+                Product
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Total
+            </th>
+            <th>
+
+            </th>
+        </tr>
+        <tr *ngFor="let item of _cartList">
+
+            <td>
+                {{ item.product.name }}
+            </td>
+            <td>
+                {{ item.product.price }}
+            </td>
+            <td>
+                {{ item.quantity }}
+            </td>
+            <td>
+                {{ item.product.price * item.quantity }}
+            </td>
+            <td>
+                <button mat-icon-button (click)="delete(item)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <div fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+        <div class="item item-1" fxFlex="10%">
+        </div>
+        <div class="item item-2" fxFlex="15%" fxFlexOrder="3">
+            <button mat-raised-button color="primary" style="text-align: right" routerLink="cofirm">Finalizar Compra</button>
+        </div>
+        <div class="item item-3" fxFlex>
+        </div>
+    </div>
+</div>
+<br>
+<div fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+    <div class="item item-1" fxFlex="10%">
+    </div>
+    <div class="item item-2" fxFlex="15%" fxFlexOrder="3">
+        <button mat-raised-button color="" routerLink="../products"> Continuar comprando</button>
+    </div>
+    <div class="item item-3" fxFlex>
+    </div>
+</div>

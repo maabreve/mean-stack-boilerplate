@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import {FlexModule } from '@angular/flex-layout';
 
 import {
   MatInputModule,
@@ -10,6 +11,11 @@ import {
   MatToolbarModule,
   MatProgressSpinnerModule,
   MatDialogModule,
+  MatGridListModule,
+  MatMenuModule,
+  MatBadgeModule,
+  MatTableModule,
+  MatTabsModule,
 } from '@angular/material';
 
 @NgModule({
@@ -23,6 +29,14 @@ import {
     MatToolbarModule,
     MatProgressSpinnerModule,
     MatDialogModule,
+    MatIconModule,
+    MatGridListModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatBadgeModule,
+    FlexModule,
+    MatTableModule,
+    MatTabsModule,
   ],
   exports: [
     MatInputModule,
@@ -34,6 +48,14 @@ import {
     MatToolbarModule,
     MatProgressSpinnerModule,
     MatDialogModule,
+    MatIconModule,
+    MatGridListModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatBadgeModule,
+    FlexModule,
+    MatTableModule,
+    MatTabsModule,
   ],
 })
 export class MaterialModule {}

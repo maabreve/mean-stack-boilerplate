@@ -1,0 +1,45 @@
+<!-- <h1 class="mat-display-1">Jackdaws love my big sphinx of quartz.</h1>
+<h2 class="mat-h2">The quick brown fox jumps over the lazy dog.</h2>
+ -->
+
+<mat-grid-list cols="1" rowHeight="10:1">
+    <mat-grid-tile>
+        <h1 class="h1">Consulta de Produtos</h1>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list cols="2" rowHeight="70px" style="margin-bottom: 20px">
+    <mat-grid-tile>
+        <app-search-item></app-search-item>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <app-items-found [items]="productList.length"></app-items-found>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<div class="container card-item" *ngFor="let product of productList" fxLayout fxLayout.xs="column" fxLayoutAlign="center"
+    fxLayoutGap="10px" fxLayoutGap.xs="0">
+
+    <a [routerLink]="['../product', product.id]">
+
+        <div class="item item-1" fxFlex="15%">
+            <img mat-card-image width="100%" [src]=product.imageUrl alt="Product image">
+        </div>
+        <div class="item item-2" style="padding:0 10px 0 20px;" fxFlex>
+            <h4>{{ product.name }}</h4>
+            {{ product.description }}
+        </div>
+    </a>
+    <div class="item item-3" fxFlex="18%" fxFlexOrder="3">
+        <mat-grid-list cols="1" rowHeight="2:1">
+            <form>
+                <mat-form-field>
+                    <input type="number" matInput placeholder="Quantidade" class="text-center" value="1" #quantity>
+                </mat-form-field>
+            </form>
+            <mat-grid-tile>
+                <button mat-raised-button color="primary" (click)="addToCart(product, quantity)">Adicionar ao carrinho</button>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>

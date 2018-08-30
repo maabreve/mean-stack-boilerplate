@@ -1,0 +1,33 @@
+<div>
+    <div>
+        <div class="item item-1" fxFlex="30%">
+            <img mat-card-image width="100%" [src]=product.imageUrl alt="Product image">
+        </div>
+        <div class="item item-2" style="padding:0 10px 0 20px;" fxFlex>
+            <h4>{{ product.name }}</h4>
+            {{ product.description }}
+        </div>
+    </div>
+    <div class="item item-3" fxFlex="15%" fxFlexOrder="3">
+        <mat-grid-list cols="1" rowHeight="2:1">
+            <form>
+                <mat-form-field>
+                    <input type="number" matInput placeholder="Quantidade" class="text-center" value="1" #quantity>
+                </mat-form-field>
+            </form>
+            <mat-grid-tile>
+                <button mat-raised-button color="primary" (click)="addToCart(product, quantity)">Comprar</button>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <button mat-raised-button color="" routerLink="../../products"> Continuar comprando</button>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>
+<br>
+<div>
+    <mat-tab-group>
+        <mat-tab label="Avaliações"> Avaliações </mat-tab>
+        <mat-tab label="Especificações Técnicas"> Especificações Técnicas</mat-tab>
+    </mat-tab-group>
+</div>
