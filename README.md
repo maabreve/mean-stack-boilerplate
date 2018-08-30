@@ -5,8 +5,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Development server
 
 * git clone https://github.com/maabreve/ngrx-boilerplate.git
-* cd ngrx-boilerplate ** `ng serve --open`
+* cd ngrx-boilerplate  
+* npm install
+* ng serve --open
 
+## Technologies
+
+* Angular 6
+* Typescript
+* @ngrx/store
+* Angular Material
 
 ## Code scaffolding
 
@@ -24,6 +32,3 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
